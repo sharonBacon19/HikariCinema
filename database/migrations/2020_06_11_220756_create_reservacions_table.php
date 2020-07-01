@@ -24,8 +24,8 @@ class CreateReservacionsTable extends Migration
             $table->unsignedInteger('ticket_id');
             $table->foreign('ticket_id')->references('id')->on('tickets');
             #cliente
-            $table->unsignedInteger('cliente_id');
-            $table->foreign('cliente_id')->references('id')->on('clientes');
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
@@ -42,8 +42,8 @@ class CreateReservacionsTable extends Migration
             $table->dropColumn('ticket_id');
             $table->dropForeign('reservacions_detproducto_id_foreign');
             $table->dropColumn('detproducto_id');
-            $table->dropForeign('reservacions_cliente_id_foreign');
-            $table->dropColumn('cliente_id');
+            $table->dropForeign('reservacions_user_id_foreign');
+            $table->dropColumn('user_id');
         });
         Schema::dropIfExists('reservacions');
     }

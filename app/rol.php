@@ -6,5 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Rol extends Model
 {
-    //
+    //un rol pertene a varios usuarios
+    public function users()
+    {
+        return $this->hasMany('App\User');
+    }
 }

@@ -36,4 +36,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    //métodos de las relaciones
+    //roles, relaciones que tiene, buscarlas y establecerlas
+    //un usuario tiene un rol
+    //nombre del método de la relación
+    public function rol()
+    {
+        return $this->belongsTo('App\rol'); //modelo con el que estoy estableciendo relación
+    }
+
+
 }
